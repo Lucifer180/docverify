@@ -1,0 +1,27 @@
+/* Design tokens. Tailwind v4 turns @theme variables into utilities (bg-brand-700, font-sans, ...). */
+@theme {
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --color-ink-950: #0b1c1d;
+  --color-ink-900: #11292a;
+  --color-ink-800: #1d3a3b;
+
+  --color-brand-50: #eefaf7;
+  --color-brand-100: #d4f1ea;
+  --color-brand-200: #a9e2d5;
+  --color-brand-500: #14a38b;
+  --color-brand-600: #0f8a76;
+  --color-brand-700: #0f6f61;
+  --color-brand-800: #0f3d3e;
+
+  --color-paper: #f7f6f2;
+  --color-line: #e4e2da;
+
+  --color-pass: #15803d;
+  --color-flag: #b45309;
+  --color-fail: #b91c1c;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.05), 0 1px 3px rgb(16 24 40 / 0.06);
+}

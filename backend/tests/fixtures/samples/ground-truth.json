@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-11-02T17:59:45.961Z",
+  "cases": [
+    {
+      "id": "case-consistent",
+      "applicantName": "Ravi Kumar Sharma",
+      "applicantDob": "2004-03-12",
+      "expectedIssues": [],
+      "documents": [
+        {
+          "file": "c1_aadhaar.png",
+          "type": "identity_document",
+          "fields": {
+            "id_type": "Aadhaar",
+            "full_name": "Ravi Kumar Sharma",
+            "date_of_birth": "2004-03-12",
+            "gender": "Male",
+            "father_name": "Suresh Kumar Sharma",
+            "document_number": "2345 6789 0123"
+          }
+        },
+        {
+          "file": "c1_marksheet.pdf",
+          "type": "certificate",
+          "fields": {
+            "student_name": "Ravi Kumar Sharma",
+            "date_of_birth": "2004-03-12",
+            "father_name": "Suresh Kumar Sharma",
+            "register_number": "KA2022-118734",
+            "institution_name": "Green Valley Public School",
+            "year_of_passing": 2022,
+            "total_marks": 430,
+            "max_marks": 500,
+            "percentage": 86,
+            "result": "PASS",
+            "issue_date": "2022-07-20"
+          }
+        },
+        {
+          "file": "c1_application_scanned.pdf",
+          "type": "application_form",
+          "fields": {
+            "applicant_name": "Ravi Kumar Sharma",
+            "date_of_birth": "2004-03-12",
+            "father_name": "Suresh Kumar Sharma",
+            "email": "ravi.sample@example.com",
+            "phone": "9876543210",
+            "applied_for": "B.E. Computer Science",
+            "application_date": "2025-06-15"
+          }
+        }
+      ]
+    },
+    {
+      "id": "case-discrepancies",
+      "applicantName": "Anita Desai",
+      "applicantDob": "2003-07-25",
+      "documents": [
+        {
+          "file": "c2_aadhaar_initial.jpg",
+          "type": "identity_document",
+          "fields": {
+            "id_type": "Aadhaar",
+            "full_name": "A. Desai",
+            "date_of_birth": "2003-07-25",
+            "gender": "Female",
+            "father_name": "Mohan Desai",
+            "document_number": "5678 1234 9012"
+          }
+        },
+        {
+          "file": "c2_marksheet_modified.png",
+          "type": "certificate",
+          "fields": {
+            "student_name": "Anita Desai",
+            "date_of_birth": "2003-08-25",
+            "father_name": "Mohan Desai",
+            "register_number": "MH2021-55120",
+            "institution_name": "Lakeview Junior College",
+            "year_of_passing": 2021,
+            "total_marks": 540,
+            "max_marks": 500,
+            "percentage": 88,
+            "result": "PASS",
+            "issue_date": "2021-08-05"
+          }
+        }
+      ],
+      "expectedIssues": [
+        "cross_document_date_of_birth",
+        "cross_document_person_name",
+        "matches_submitter",
+        "marks_within_max",
+        "percentage_consistent"
+      ]
+    },
+    {
+      "id": "case-invoice",
+      "applicantName": "Bright Supplies Pvt Ltd",
+      "applicantDob": null,
+      "documents": [
+        {
+          "file": "c3_invoice_wrong_total.png",
+          "type": "invoice",
+          "fields": {
+            "invoice_number": "INV-2025-0457",
+            "invoice_date": "2025-09-10",
+            "due_date": "2025-10-10",
+            "vendor_name": "Bright Supplies Pvt Ltd",
+            "vendor_gstin": "29ABCDE1234F1Z5",
+            "buyer_name": "Sunrise College",
+            "subtotal": 9500,
+            "tax_amount": 1710,
+            "total_amount": 11400
+          }
+        },
+        {
+          "file": "c3_invoice_low_quality.jpg",
+          "type": "invoice",
+          "fields": {
+            "invoice_number": "INV-2025-0458",
+            "invoice_date": "2025-09-12",
+            "due_date": "2025-10-12",
+            "vendor_name": "Bright Supplies Pvt Ltd",
+            "vendor_gstin": "29ABCDE1234F1Z5",
+            "buyer_name": "Sunrise College",
+            "subtotal": 8900,
+            "tax_amount": 1602,
+            "total_amount": 10502
+          }
+        }
+      ],
+      "expectedIssues": [
+        "subtotal_plus_tax"
+      ]
+    }
+  ]
+}

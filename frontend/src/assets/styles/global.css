@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+@import './variables.css';
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-paper font-sans text-ink-900; }
+  ::selection { @apply bg-brand-200; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-brand-600; }
+}
+
+@layer components {
+  .card { @apply rounded-[var(--radius-card)] border border-line bg-white shadow-[var(--shadow-card)]; }
+  .label { @apply mb-1 block text-sm font-medium text-ink-800; }
+  .field {
+    @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink-900 placeholder:text-stone-400
+      transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100 focus:outline-none disabled:bg-stone-50 disabled:text-stone-500;
+  }
+  .table-head { @apply px-4 py-2.5 text-left text-xs font-semibold tracking-wide text-stone-500 uppercase; }
+  .table-cell { @apply px-4 py-3 text-sm; }
+}
+
+/* Thin scrollbars inside panels */
+.scroll-thin { scrollbar-width: thin; scrollbar-color: #d6d3cb transparent; }
